@@ -54,5 +54,13 @@ class BooksTableSeeder extends Seeder
             'description' => 'texttexttexttexttexttexttext',
         ];
         DB::table('books')->insert($param);
+
+        $param = [
+            'title' => '何でも見てやろう',
+            'author' => '小田実',
+            'publisher' => '講談社文庫',
+            'description' => 'texttexttexttexttexttexttext',
+        ];
+        DB::table('books')->insert($param);
     }
 }

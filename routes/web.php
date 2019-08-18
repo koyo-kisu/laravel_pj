@@ -12,5 +12,3 @@
 */
 
 Route::get('/', 'BookappController@index');
-
-Route::resource('articles', 'BookappController');

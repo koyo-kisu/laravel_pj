@@ -22,3 +22,7 @@ Route::get('books', 'Api\BookController@index');
 
 /* post送信 */
 Route::post('create', 'Api\BookController@create');
+
+
+
+Route::post('del', 'Api\BookController@delete');
