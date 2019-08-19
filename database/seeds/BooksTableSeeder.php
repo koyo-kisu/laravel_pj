@@ -24,7 +24,7 @@ class BooksTableSeeder extends Seeder
             'title' => '潮騒',
             'author' => '三島由紀夫',
             'publisher' => '新潮文庫',
-            'description' => 'texttexttexttexttexttexttext',
+            'description' => '孤島という狭い文脈の中において会うことすらも許されない恋愛ほど2人にとって苦しく切ないものはない。そのなかにおいてでも、どうにか連絡を取ろうと試行錯誤する様には2人の愛の大きさと深さを感じた。官能描写はなるだけ省いているようにみえる。かわりに初々しい青年の心境や女への想いを細かく描いており全体として清々しさを感じる。',
         ];
         DB::table('books')->insert($param);
 
