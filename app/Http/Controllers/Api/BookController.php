@@ -43,7 +43,7 @@ class BookController extends Controller
         //     "description" => $item->description,
         // ]);
 
-        //$items = Book::all();
+        $items = Book::all();
         return response()->json($item);
     }
 
