@@ -36,12 +36,12 @@ class BookController extends Controller
         $item->description = $request->description;
         $item->save();
 
-        // Book::insert([
-        //     "title" => $item->title, 
-        //     "author" => $item->author,
-        //     "publisher" => $item->publisher,
-        //     "description" => $item->description,
-        // ]);
+        Book::insert([
+            "title" => $item->title, 
+            "author" => $item->author,
+            "publisher" => $item->publisher,
+            "description" => $item->description,
+        ]);
 
         $items = Book::all();
         return response()->json($item);
