@@ -31,10 +31,10 @@ class BookController extends Controller
 
         $item = new Book;
         $item->title = $request->title;
-        // $item->author = $request->author;
-        // $item->publisher = $request->publisher;
-        // $item->description = $request->description;
-        // $item->save();
+        $item->author = $request->author;
+        $item->publisher = $request->publisher;
+        $item->description = $request->description;
+        $item->save();
 
         // Book::insert([
         //     "title" => $item->title, 
