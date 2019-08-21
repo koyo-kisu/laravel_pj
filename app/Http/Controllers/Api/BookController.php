@@ -36,13 +36,6 @@ class BookController extends Controller
         $item->description = $request->description;
         $item->save();
 
-        // Book::insert([
-        //     "title" => $item->title, 
-        //     "author" => $item->author,
-        //     "publisher" => $item->publisher,
-        //     "description" => $item->description,
-        // ]);
-
         // $items = Book::all();
         return response()->json($item);
     }
@@ -52,7 +45,7 @@ class BookController extends Controller
         $item = Book::where('id', $request->id)->delete();
         
         // $items = Book::all();
-        return view('/');
+        return view('/api/books');
     }
 
     public function search(Request $request)
