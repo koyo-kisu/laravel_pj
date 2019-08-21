@@ -23,11 +23,11 @@ class BookController extends Controller
 
     public function create(Request $request)
     {
-        $request->validate($request, [
-            'title' => 'required',
-            'author' => 'required',
-            'description' => 'required',
-        ]);
+        // $request->validate($request, [
+        //     'title' => 'required',
+        //     'author' => 'required',
+        //     'description' => 'required',
+        // ]);
 
         $item = new Book;
         $item->title = $request->title;
@@ -44,7 +44,7 @@ class BookController extends Controller
     {
         $item = Book::where('id', $request->id)->delete();
         
-        // $items = Book::all();
+        $items = Book::all();
         return response()->json($item);
     }
 
