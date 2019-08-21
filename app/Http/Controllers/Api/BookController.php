@@ -52,14 +52,14 @@ class BookController extends Controller
         $item = Book::where('id', $request->id)->delete();
         
         $items = Book::all();
-        return $items;
+        return response()->json($item);
     }
 
     public function search(Request $request)
     {
         $text = Book::where('title', $request->input)->get();
         $param = ['input' => $request->input, 'text' => $text];
-        return view('/find', $param);
+        return response()->json($item);
     }
     
 }

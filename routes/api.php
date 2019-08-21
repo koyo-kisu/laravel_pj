@@ -23,6 +23,8 @@ Route::get('books', 'Api\BookController@index');
 /* post送信 */
 Route::post('create', 'Api\BookController@create');
 
+/* 削除 */
 Route::post('del', 'Api\BookController@delete');
+
 /* 検索 */
 Route::post('search', 'Api\BookController@index');
