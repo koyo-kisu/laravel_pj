@@ -52,7 +52,7 @@ class BookController extends Controller
         $item = Book::where('id', $request->id)->delete();
         
         // $items = Book::all();
-        return $items;
+        return view('/');
     }
 
     public function search(Request $request)
