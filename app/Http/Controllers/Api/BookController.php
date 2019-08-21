@@ -36,7 +36,7 @@ class BookController extends Controller
         $item->description = $request->description;
         $item->save();
 
-        // $items = Book::all();
+        $items = Book::all();
         return response()->json($item);
     }
 
@@ -44,7 +44,7 @@ class BookController extends Controller
     {
         $item = Book::where('id', $request->id)->delete();
         
-        $items = Book::all();
+        // $items = Book::all();
         return response()->json($item);
     }
 

@@ -27,4 +27,4 @@ Route::post('create', 'Api\BookController@create');
 Route::post('del', 'Api\BookController@delete');
 
 /* 検索 */
-Route::post('search', 'Api\BookController@index');
+Route::post('search', 'Api\BookController@search');
