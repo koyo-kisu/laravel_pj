@@ -14,7 +14,7 @@ class BookController extends Controller
         $items = Book::all();
         return response()->json($items);
 
-        //paginateメソッド　質問！return先はvue? 
+        //paginateメソッド 
         $sort = $request->sort;
         $items = Book::orderBy($sort, 'asc')->paginate(5);
         $param = ['items' => $items, 'sort' => $sort];
@@ -53,6 +53,13 @@ class BookController extends Controller
         
         $items = Book::all();
         return $items;
+    }
+
+    public function search(Request $request)
+    {
+        $text = Book::where('title', $request->input)->get();
+        $param = ['input' => $request->input, 'text' => $text];
+        return view('/find', $param);
     }
     
 }
