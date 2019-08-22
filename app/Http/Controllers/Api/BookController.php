@@ -61,7 +61,7 @@ class BookController extends Controller
     public function update(Request $request, Book $item)
     {
         $item = Book::find($id);
-
+        $item->id = $request->id;
         $item->title = $request->title;
         $author->author = $request->author;
         $publisher->publisher = $request->publisher;
@@ -69,7 +69,7 @@ class BookController extends Controller
         $finish_date->finish_date = $request->finish_date;
 
         $item->save();
-        // $item.save();
+
         $items = Book::all();
         return response()->json($item);
     }
