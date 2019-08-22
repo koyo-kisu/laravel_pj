@@ -55,7 +55,7 @@ class BookController extends Controller
         $param = ['title' => $request->title];
 
         $items = Book::all();
-        return response()->json($param);
+        return response()->json($item);
     }
     
 }
