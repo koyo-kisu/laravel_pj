@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /* get送信 */
 Route::get('books', 'Api\BookController@index');
 
-/* post送信 */
+/* 作成 */
 Route::post('create', 'Api\BookController@create');
 
 /* 削除 */
