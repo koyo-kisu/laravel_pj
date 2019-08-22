@@ -60,13 +60,18 @@ class BookController extends Controller
 
     public function update(Request $request, Book $item)
     {
-        $item = Book::where('id', $request->id)->get();
-        
-        $item->title = $request->input('title','');
-        $item->author = $request->input('author','');
-        $item->publisher = $request->input('publisher','');
-        $item->description = $request->input('description','');
-        $item->finish_date = $request->input('finish_date','');
+        // $item = Book::where('id', $request->id)->get();
+        $id = $request->id;
+        $title = $request->title;
+        $author = $request->author;
+        $publisher = $request->publisher;
+        $description = $request->description;
+        $finish_date =$request->finish_date;
+        // $item->title = $request->input('title','');
+        // $item->author = $request->input('author','');
+        // $item->publisher = $request->input('publisher','');
+        // $item->description = $request->input('description','');
+        // $item->finish_date = $request->input('finish_date','');
 
         $item->save();
         $items = Book::all();
