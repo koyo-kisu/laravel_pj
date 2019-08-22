@@ -28,3 +28,6 @@ Route::post('del', 'Api\BookController@delete');
 
 /* 検索 */
 Route::post('search', 'Api\BookController@search');
+
+/* 更新 */
+Route::post('update', 'Api\BookController@update');

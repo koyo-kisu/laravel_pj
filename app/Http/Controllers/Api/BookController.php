@@ -33,7 +33,6 @@ class BookController extends Controller
         $item->title = $request->title;
         $item->author = $request->author;
         $item->publisher = $request->publisher;
-        $item->created_at = $request->created_at;
         $item->description = $request->description;
         $item->finish_date = $request->finish_date;
         $item->save();
@@ -55,6 +54,19 @@ class BookController extends Controller
         $item = Book::where('title', $request->title)->get();
         $param = ['title' => $request->title];
 
+        $items = Book::all();
+        return response()->json($item);
+    }
+
+    public function update(Request $request, Book $item)
+    {
+        $item->title = $request->input('title','');
+        $item->author = $request->input('author','');
+        $item->publisher = $request->input('publisher','');
+        $item->description = $request->input('description','');
+        $item->finish_date = $request->input('finish_date','');
+
+        $item->save();
         $items = Book::all();
         return response()->json($item);
     }
