@@ -53,7 +53,6 @@ class BookController extends Controller
     {
         $item = Book::where('title', $request->title)->get();
         $param = ['title' => $request->title];
-        $param->save();
 
         $items = Book::all();
         return response()->json($param);
