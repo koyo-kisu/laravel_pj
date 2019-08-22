@@ -60,7 +60,7 @@ class BookController extends Controller
 
     public function update(Request $request, Book $item)
     {
-        $items = Book::all();
+        $item = Book::where('id', $request->id)->get();
         $item->title = $request->input('title','');
         $item->author = $request->input('author','');
         $item->publisher = $request->input('publisher','');
