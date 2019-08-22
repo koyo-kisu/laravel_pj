@@ -52,6 +52,7 @@ class BookController extends Controller
     {
         $text = Book::where('title', $request->input)->get();
         $param = ['input' => $request->input, 'text' => $text];
+        $items = Book::all();
         return response()->json($item);
     }
     
