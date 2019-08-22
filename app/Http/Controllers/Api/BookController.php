@@ -30,6 +30,7 @@ class BookController extends Controller
         // ]);
 
         $item = new Book;
+        
         $item->title = $request->title;
         $item->author = $request->author;
         $item->publisher = $request->publisher;
@@ -61,12 +62,13 @@ class BookController extends Controller
     public function update(Request $request, Book $item)
     {
         $item = Book::find($id);
+        $id = $request->id;
         $item->id = $request->id;
         $item->title = $request->title;
-        $author->author = $request->author;
-        $publisher->publisher = $request->publisher;
-        $description->description = $request->description;
-        $finish_date->finish_date = $request->finish_date;
+        $item->author = $request->author;
+        $item->publisher = $request->publisher;
+        $item->description = $request->description;
+        $item->finish_date = $request->finish_date;
 
         $item->save();
 
