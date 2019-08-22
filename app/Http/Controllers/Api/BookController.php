@@ -35,6 +35,7 @@ class BookController extends Controller
         $item->publisher = $request->publisher;
         $item->created_at = $request->created_at;
         $item->description = $request->description;
+        $item->finish_date = $request->finish_date;
         $item->save();
 
         $items = Book::all();
