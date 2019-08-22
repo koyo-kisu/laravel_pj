@@ -33,6 +33,7 @@ class BookController extends Controller
         $item->title = $request->title;
         $item->author = $request->author;
         $item->publisher = $request->publisher;
+        $item->created_at = $request->created_at;
         $item->description = $request->description;
         $item->save();
 
@@ -44,13 +45,13 @@ class BookController extends Controller
     {
         $item = Book::where('id', $request->id)->delete();
         
-        // $items = Book::all();
+        $items = Book::all();
         return response()->json($item);
     }
 
     public function search(Request $request)
     {
-        $text = Book::where('title', $request->input)->get();
+        $item = Book::where('title', $request->input)->get();
         $param = ['input' => $request->input, 'text' => $text];
         $items = Book::all();
         return response()->json($item);
