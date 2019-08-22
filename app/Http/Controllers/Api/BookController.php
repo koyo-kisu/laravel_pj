@@ -68,8 +68,8 @@ class BookController extends Controller
         $description->description = $request->description;
         $finish_date->finish_date = $request->finish_date;
 
-        // $item->save();
-        $item.save();
+        $item->save();
+        // $item.save();
         $items = Book::all();
         return response()->json($item);
     }
