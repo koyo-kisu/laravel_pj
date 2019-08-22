@@ -64,11 +64,11 @@ class BookController extends Controller
         $item = Book::find($id);
         $id = $request->id;
         // $item->id = $request->id;
-        $item->title = $request->title;
-        $item->author = $request->author;
-        $item->publisher = $request->publisher;
-        $item->description = $request->description;
-        $item->finish_date = $request->finish_date;
+        $title = $request->title;
+        $author = $request->author;
+        $publisher = $request->publisher;
+        $description = $request->description;
+        $finish_date = $request->finish_date;
 
         $item->save();
 
