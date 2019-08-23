@@ -23,11 +23,6 @@ class BookController extends Controller
 
     public function create(Request $request)
     {
-        // $request->validate($request, [
-        //     'title' => 'required',
-        //     'author' => 'required',
-        //     'description' => 'required',
-        // ]);
 
         $item = new Book;
         
@@ -71,7 +66,7 @@ class BookController extends Controller
         $item->save();
 
         $items = Book::all();
-        return redirect()->route('/#/add', [
+        return redirect()->route('/#/show', [
             'id' => $item->id,
         ]);
         
