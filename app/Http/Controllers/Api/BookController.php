@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        $items = Book::all();
+        $items = Book::all()->take(5);
         return response()->json($items);
 
         //paginateメソッド 
@@ -76,4 +76,14 @@ class BookController extends Controller
         return response()->json($item);
     }
     
+    public function edit(Request $request)
+    {
+        $id = $request->id;
+        $item = Book::find($id);
+        $item->save();
+
+        $items = Book::all();
+        return response()->json($item);
+        
+    }
 }
