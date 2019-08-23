@@ -46,8 +46,7 @@ class BookController extends Controller
     {
         $item = Book::where('id', $request->id)->delete();
         
-        // $items = Book::all();
-        return response()->json($item);
+        // return response()->json($item);
     }
 
     public function search(Request $request)
