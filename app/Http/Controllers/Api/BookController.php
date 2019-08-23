@@ -57,22 +57,6 @@ class BookController extends Controller
         $items = Book::all();
         return response()->json($item);
     }
-
-    public function update(Request $request, Book $item)
-    {
-        $id = $request->id;
-        $item = Book::find($id);
-        
-        $title = $request->title;
-        $author = $request->author;
-        $publisher = $request->publisher;
-        $description = $request->description;
-        $finish_date = $request->finish_date;
-        $item->save();
-
-        $items = Book::all();
-        return response()->json($item);
-    }
     
     public function edit(Request $request)
     {
