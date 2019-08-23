@@ -47,8 +47,6 @@ class BookController extends Controller
         $item = Book::where('id', $request->id)->delete();
         
         $items = Book::all();
-        // return response()->json($item);
-        return 'ホームへ移動します';
     }
 
     public function search(Request $request)
@@ -70,7 +68,6 @@ class BookController extends Controller
         $publisher = $request->publisher;
         $description = $request->description;
         $finish_date = $request->finish_date;
-
         $item->save();
 
         $items = Book::all();
@@ -81,10 +78,18 @@ class BookController extends Controller
     {
         $id = $request->id;
         $item = Book::find($id);
+
+        $title = $request->title;
+        $author = $request->author;
+        $publisher = $request->publisher;
+        $description = $request->description;
+        $finish_date = $request->finish_date;
         $item->save();
 
         $items = Book::all();
-        return response()->json($item);
+        return redirect()->route('/', [
+            'id' => $item->id,
+        ]);
         
     }
 }
