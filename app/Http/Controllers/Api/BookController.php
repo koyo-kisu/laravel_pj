@@ -47,6 +47,7 @@ class BookController extends Controller
         $item = Book::where('id', $request->id)->delete();
         
         // return response()->json($item);
+        return 'ホームへ移動します';
     }
 
     public function search(Request $request)
