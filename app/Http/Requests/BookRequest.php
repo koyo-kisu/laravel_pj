@@ -24,16 +24,14 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'author' => 'required',
+
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required'  => '*タイトル名は必須項目です',
-            'author.required'  => '*著者名は必須項目です',
+
         ];
     }
 }
