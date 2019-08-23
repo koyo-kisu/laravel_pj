@@ -33,7 +33,7 @@ class BookRequest extends FormRequest
     {
         return [
             'title.required'  => '*タイトル名は必須項目です',
-            'author.required'  => '*作者名は必須項目です',
+            'author.required'  => '*著者名は必須項目です',
         ];
     }
 }
