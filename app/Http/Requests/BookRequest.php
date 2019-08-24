@@ -24,14 +24,16 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-
+            'title' => 'required',
+            'author' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-
+            'title.required' => 'title is required',
+            'author.required' => 'author is required',
         ];
     }
 }
