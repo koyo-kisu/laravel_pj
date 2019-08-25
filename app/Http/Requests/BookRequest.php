@@ -41,6 +41,9 @@ class BookRequest extends FormRequest
 
     protected function failedValidation( Validator $validator )
     {
+        $response['data']    = [];
+        $response['status']  = 'NG';
+        $response['summary'] = 'Failed validation.';
         $response['errors']  = $validator->errors()->toArray();
 
         throw new HttpResponseException(
