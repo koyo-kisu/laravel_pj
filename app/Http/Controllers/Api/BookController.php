@@ -63,6 +63,7 @@ class BookController extends Controller
         $publisher = $request->publisher;
         $description = $request->description;
         $finish_date = $request->finish_date;
+        $jenre = $request->jenre;
         $item->save();
 
         $items = Book::all();
