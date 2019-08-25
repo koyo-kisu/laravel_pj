@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator; 
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class BookRequest extends FormRequest
 {
@@ -35,5 +37,22 @@ class BookRequest extends FormRequest
             'title.required' => 'タイトルは必須項目です',
             'author.required' => '著者名は必須項目です',
         ];
+    }
+
+    protected function failedValidation( Validator $validator )
+    {
+        $response['errors']  = $validator->errors()->toArray();
+
+        throw new HttpResponseException(
+            response()->json( $response )
+        );
+    }
+
+    public function response( array $errors)
+    {
+        $response = [
+            'errors' => $errors
+        ];
+        return new JsonResponse( $response );
     }
 }
