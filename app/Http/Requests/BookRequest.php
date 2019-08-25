@@ -32,8 +32,8 @@ class BookRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'title is required',
-            'author.required' => 'author is required',
+            'title.required' => 'タイトルは必須項目です',
+            'author.required' => '著者名いは必須項目です',
         ];
     }
 }
