@@ -67,8 +67,8 @@ class BookController extends Controller
         $genre = $request->genre;
         $item->save();
 
-        $items = Book::all();
-        return redirect()->route('/#/edit{:id}', [
+        // $items = Book::all();
+        return redirect()->route('/#/edit/:id', [
             'id' => $item->id,
         ]);
         
