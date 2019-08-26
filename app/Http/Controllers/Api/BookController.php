@@ -68,7 +68,7 @@ class BookController extends Controller
         $item->save();
 
         // $items = Book::all();
-        return redirect()->route('/#/edit/:id', [
+        return redirect()->route('/#/show/', [
             'id' => $item->id,
         ]);
         
