@@ -31,6 +31,7 @@ class BookController extends Controller
         $item->publisher = $request->publisher;
         $item->description = $request->description;
         $item->finish_date = $request->finish_date;
+        $item->genre = $request->genre;
         $item->save();
 
         $items = Book::all();
@@ -63,11 +64,11 @@ class BookController extends Controller
         $publisher = $request->publisher;
         $description = $request->description;
         $finish_date = $request->finish_date;
-        $jenre = $request->jenre;
+        $genre = $request->genre;
         $item->save();
 
         $items = Book::all();
-        return redirect()->route('/#/edit', [
+        return redirect()->route('/#/edit{:id}', [
             'id' => $item->id,
         ]);
         
