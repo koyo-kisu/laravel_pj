@@ -17,10 +17,10 @@ class BookController extends Controller
         return response()->json($items);
 
         //paginateメソッド 
-        $sort = $request->sort;
-        $items = Book::orderBy($sort, 'asc')->paginate(5);
-        $param = ['items' => $items, 'sort' => $sort];
-        return response()->json($items);
+        // $sort = $request->sort;
+        // $items = Book::orderBy($sort, 'asc')->paginate(5);
+        // $param = ['items' => $items, 'sort' => $sort];
+        // return response()->json($items);
     }
 
     public function create(Request $request)
@@ -78,9 +78,5 @@ class BookController extends Controller
 
         $items = Book::all();
         return response()->json($item);
-        // return redirect()->route('/#/show/', [
-        //     'id' => $item->id,
-        // ]);
-        
     }
 }
