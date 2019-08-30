@@ -11,7 +11,9 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
+        //Bookクラスのデータを$itemsに代入
         $items = Book::all();
+        //itemsをjson形式で返す
         return response()->json($items);
 
         //paginateメソッド 

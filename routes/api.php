@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/* get送信 */
+/* getで/api/booksにリクエストを送るとController中のindexアクションを実行 */
 Route::get('books', 'Api\BookController@index');
 
 /* 作成 */
