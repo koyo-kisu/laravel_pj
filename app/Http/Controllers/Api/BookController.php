@@ -63,7 +63,7 @@ class BookController extends Controller
         return response()->json($item);
     }
     
-    public function edit(Request $request)
+    public function edit(Request $request, Book $item)
     {
         $id = $request->id;
         $item = Book::find($id);
@@ -75,6 +75,7 @@ class BookController extends Controller
         $finish_date = $request->finish_date;
         $genre = $request->genre;
         $item->save();
+
 
         $items = Book::all();
         return response()->json($item);
