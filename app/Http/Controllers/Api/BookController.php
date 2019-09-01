@@ -50,13 +50,13 @@ class BookController extends Controller
     public function search(Request $request)
     {
         $item = Book::where('title', $request->title)->get();
-        $item = Book::where('author', $request->authoor)->get();
-        $item = Book::where('publisher', $request->publisher)->get();
+        // $item = Book::where('author', $request->authoor)->get();
+        // $item = Book::where('publisher', $request->publisher)->get();
 
         $param = [
             'title' => $request->title, 
-            'author' => $request->author,
-            'publisher' => $request->publisher,
+            // 'author' => $request->author,
+            // 'publisher' => $request->publisher,
         ];
 
         $items = Book::all();
@@ -79,7 +79,5 @@ class BookController extends Controller
 
         $items = Book::all();
         return  response()->json($item);
-
-        
     }
 }
