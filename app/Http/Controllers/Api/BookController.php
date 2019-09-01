@@ -78,6 +78,6 @@ class BookController extends Controller
 
 
         $items = Book::all();
-        return  response()->json($item);
+        return response()->json($item);
     }
 }
