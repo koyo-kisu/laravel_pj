@@ -31,6 +31,3 @@ Route::post('search', 'Api\BookController@search');
 
 /* 更新 */
 Route::post('update', 'Api\BookController@update');
-
-/* 編集 */
-Route::post('edit', 'Api\BookController@edit');

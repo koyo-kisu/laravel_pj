@@ -36,7 +36,6 @@ class BookController extends Controller
         $item->genre = $request->genre;
         $item->save();
 
-        $items = Book::all();
         return response()->json($item);
     }
 
@@ -49,6 +48,7 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
+        //複数条件の記述方法を復習する！
         $item = Book::where('title', $request->title)->get();
         // $item = Book::where('author', $request->authoor)->get();
         // $item = Book::where('publisher', $request->publisher)->get();
@@ -62,22 +62,20 @@ class BookController extends Controller
         $items = Book::all();
         return response()->json($item);
     }
-    
-    public function edit(Request $request)
+
+    public function update(Request $request, Book $item)
     {
-        $id = $request->id;
         $item = Book::find($id);
 
+        $id = $request->id;
         $title = $request->title;
         $author = $request->author;
         $publisher = $request->publisher;
         $description = $request->description;
         $finish_date = $request->finish_date;
-        $genre = $request->genre;
+        $item->genre = $request->genre;
         $item->save();
 
-
-        $items = Book::all();
         return response()->json($item);
     }
 }
