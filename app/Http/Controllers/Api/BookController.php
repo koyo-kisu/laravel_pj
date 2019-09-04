@@ -48,15 +48,16 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
-        //複数条件の記述方法を復習する！
-        $item = Book::where('title', $request->title)->get();
-        // $item = Book::where('author', $request->authoor)->get();
-        // $item = Book::where('publisher', $request->publisher)->get();
+        //複数条件
+        $item = Book::where('title', $request->title)
+            ->orWhere('author', $request->authoor)
+            ->orWhere('publisher', $request->publisher)
+            ->get();
 
         $param = [
             'title' => $request->title, 
-            // 'author' => $request->author,
-            // 'publisher' => $request->publisher,
+            'author' => $request->author,
+            'publisher' => $request->publisher,
         ];
 
         $items = Book::all();
