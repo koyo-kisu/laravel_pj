@@ -53,11 +53,11 @@ class BookController extends Controller
         //もしkeywordが空欄でない場合
         if(!empty($keyword))
         {
-            $item = Book::table('title')
+            $item = Book::table('books')
                 ->where('title', 'like', '%'.$keyword.'%');
         //空欄である場合
         } else {
-            $item = Book::table('title');
+            $item = Book::table('books');
         }
 
         // $item = Book::where('title', $request->title)
