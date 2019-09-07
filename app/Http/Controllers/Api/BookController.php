@@ -48,24 +48,40 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
-        //複数条件
-        $item = Book::where('title', $request->title)
-            ->orWhere('author', $request->authoor)
-            ->orWhere('publisher', $request->publisher)
-            ->get();
+        $keyword = $request->input('keyword');
+        
+        //もしkeywordが空欄でない場合
+        if(!empty($keyword))
+        {
+            $item = DB::table('title')
+                ->where('title', 'like', '%'.$keyword.'%');
+        //空欄である場合
+        } else {
+            $item = DB::table('title');
+        }
 
-            $item->where(function($item)
-            {
-            $item->where('title', $request->title)
-                ->orWhere('author', $request->author)
-                ->orWhere('publisher', $request->publisher);
-            });
+        // $item = Book::where('title', $request->title)
+        //     ->orWhere('author', $request->authoor)
+        //     ->orWhere('publisher', $request->publisher)
+        //     ->get();
 
-        $param = [
-            'title' => $request->title, 
-            'author' => $request->author,
-            'publisher' => $request->publisher,
-        ];
+        //     $item->where(function($item)
+        //     {
+        //     $item->where('title', $request->title)
+        //         ->orWhere('author', $request->author)
+        //         ->orWhere('publisher', $request->publisher);
+        //     });
+        
+        // $item = Book::item();
+        // $item -> where('title', $request->title);
+        // $item -> where('author', $request->author);
+        // $item -> where('publisher', $request->publisher);
+
+        // $param = [
+        //     'title' => $request->title, 
+        //     'author' => $request->author,
+        //     'publisher' => $request->publisher,
+        // ];
 
         return response()->json($item);
     }
