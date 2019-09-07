@@ -49,17 +49,17 @@ class BookController extends Controller
     public function search(Request $request)
     {
         //複数条件
-        // $item = Book::where('title', $request->title)
-        //     ->orWhere('author', $request->authoor)
-        //     ->orWhere('publisher', $request->publisher)
-        //     ->get();
+        $item = Book::where('title', $request->title)
+            ->orWhere('author', $request->authoor)
+            ->orWhere('publisher', $request->publisher)
+            ->get();
 
-            // $item->where(function($item)
-            // {
-            // $item->where('title', $request->title)
-            //     ->orWhere('author', $request->author)
-            //     ->orWhere('publisher', $request->publisher)
-            // });
+            $item->where(function($item)
+            {
+            $item->where('title', $request->title)
+                ->orWhere('author', $request->author)
+                ->orWhere('publisher', $request->publisher);
+            });
 
         $param = [
             'title' => $request->title, 
