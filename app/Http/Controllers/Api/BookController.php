@@ -48,9 +48,7 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
-        $item = Book::where('title', $request->title)
-        ->where('author', $request->author)
-        ->get();
+        $item = Book::where('title', $request->title)->get();
         $param = ['title' => $request->title];
 
         return response()->json($item);
