@@ -51,9 +51,9 @@ class BookController extends Controller
         $item = Book::where('title', $request->title)
         ->where('author', $request->author)
         ->get();
-        // $param = ['title' => $request->title];
+        $param = ['title' => $request->title];
 
-        return response()->json($item);
+        return response()->json($param);
     }
 
     public function update(Request $request, Book $item)
