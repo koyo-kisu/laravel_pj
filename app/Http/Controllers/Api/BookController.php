@@ -53,7 +53,7 @@ class BookController extends Controller
         ->get();
         $param = ['title' => $request->title];
 
-        return response()->json($param);
+        return response()->json($item);
     }
 
     public function update(Request $request, Book $item)
