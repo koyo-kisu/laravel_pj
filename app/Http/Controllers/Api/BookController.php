@@ -70,7 +70,7 @@ class BookController extends Controller
         return response()->json($item);
     }
 
-    public function detail(Request $request)
+    public function detail(Request $request, $id)
     {
         $item = Book::find($id);
         return response()->json($item);
