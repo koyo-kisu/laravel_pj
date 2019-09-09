@@ -32,4 +32,4 @@ Route::post('search', 'Api\BookController@search');
 /* 更新 */
 Route::post('update', 'Api\BookController@update');
 
-Route::get('detail', 'Api\BookController@detail');
+Route::get('/books/{id}', 'Api\BookController@detail');
