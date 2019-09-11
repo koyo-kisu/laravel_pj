@@ -33,4 +33,4 @@ Route::post('search', 'Api\BookController@search');
 Route::post('update', 'Api\BookController@update');
 
 
-Route::get('/books/{id}', 'Api\BookController@index');
+Route::get('/books/{id}', 'Api\BookController@detail');
