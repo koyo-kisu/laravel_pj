@@ -65,13 +65,13 @@ class BookController extends Controller
     {
         $item = Book::find($id);
 
-        $item->id = $request->input('id', '');
-        $item->title = $request->input('title', '');
-        $item->author = $request->input('author', '');
-        $item->publisher = $request->input('publisher', '');
-        $item->description = $request->input('description', '');
-        $item->finish_date = $request->input('finish_date', '');
-        $item->genre = $request->input('genre', '');
+        $item->id = $request->input('id');
+        $item->title = $request->input('title');
+        $item->author = $request->input('author');
+        $item->publisher = $request->input('publisher');
+        $item->description = $request->input('description');
+        $item->finish_date = $request->input('finish_date');
+        $item->genre = $request->input('genre');
         $item->save();
 
         return response()->json($item);
