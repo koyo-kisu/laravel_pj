@@ -54,6 +54,13 @@ class BookController extends Controller
         return response()->json($item);
     }
 
+    public function detail(Request $request, $id)
+    {
+        $item = Book::find($id);
+        return response()->json($item);
+
+    }
+
     public function update(Request $request, Book $item)
     {
         $item = Book::find($id);
@@ -70,10 +77,9 @@ class BookController extends Controller
         return response()->json($item);
     }
 
-    public function detail(Request $request, $id)
+    public function edit(Request $request, $id)
     {
-        $item = Book::find($id);
+        $item = Book::edit($id);
         return response()->json($item);
-
     }
 }

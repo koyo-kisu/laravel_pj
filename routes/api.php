@@ -29,8 +29,11 @@ Route::post('del', 'Api\BookController@delete');
 /* 検索 */
 Route::post('search', 'Api\BookController@search');
 
+/* 詳細 */ 
+Route::get('books/{id}', 'Api\BookController@detail');
+
+/* 編集 */
+Route::get('books/edit/{id}', 'Api\BookController@edit');
+
 /* 更新 */
 Route::post('update', 'Api\BookController@update');
-
-/* 編集 */ 
-Route::get('books/{id}', 'Api\BookController@detail');
