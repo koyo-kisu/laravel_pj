@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('books', 'Api\BookController@index');
 
 /* 作成 */
-Route::post('create', 'Api\BookController@create');
+Route::post('add', 'Api\BookController@create');
 
 /* 削除 */
 Route::post('del', 'Api\BookController@delete');
