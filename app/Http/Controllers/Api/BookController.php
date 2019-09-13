@@ -65,7 +65,7 @@ class BookController extends Controller
     {
         $item = Book::find($id);
 
-        $item->id = $request->input('id');
+        $item->id = $request->input('id', '');
         $item->title = $request->input('title');
         $item->author = $request->input('author');
         $item->publisher = $request->input('publisher');
