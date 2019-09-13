@@ -33,7 +33,7 @@ Route::post('search', 'Api\BookController@search');
 Route::get('books/{id}', 'Api\BookController@detail');
 
 /* 編集 */
-Route::get('books/{id}', 'Api\BookController@edit');
+Route::get('books/error/{id}', 'Api\BookController@edit');
 
 /* 更新 */
 Route::post('update', 'Api\BookController@update');

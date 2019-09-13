@@ -79,7 +79,7 @@ class BookController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $item = Book::edit($id);
+        $item = Book::find($id);
         return response()->json($item);
     }
 }
