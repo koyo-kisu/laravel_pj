@@ -20,9 +20,7 @@ class BookappController extends Controller
      */
     public function index(Request $request)
     {
-        $items = Book::all();
-        // return $items;
-        return view('articles.index', ['items' => $items]);
+
     }
 
     /**
@@ -32,12 +30,7 @@ class BookappController extends Controller
      */
     public function create()
     {
-        $this->validate($request, Book::$rules);
-        $book = new Book;
-        $form = $request->all();
-        unset($form['_token']);
-        $book->fill($form)->save();
-        return redirect('/');
+
     }
 
     /**
@@ -48,11 +41,7 @@ class BookappController extends Controller
      */
     public function store(Request $request)
     {
-        $restdata = new Book;
-        $form = $request->all();
-        unset($form['_token']);
-        $restdata->fill($form)->save();
-        return redirect('/');
+
     }
 
     /**
@@ -63,9 +52,7 @@ class BookappController extends Controller
      */
     public function show($id)
     {
-        // 引数で受け取った$idを元にfindでレコードを取得
-        $item = Book::find($id);
-        return view('articles.show', ['article' => $article]);
+
     }
 
     /**

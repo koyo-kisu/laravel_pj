@@ -10,8 +10,8 @@ class Book extends Model
     protected $table = 'books';
     protected $guarded = array('id');
 
-    public static $rules = array(
-        'title' => 'required',
-        'author' => 'required',
-    );
+    // public static $rules = array(
+    //     'title' => 'required',
+    //     'author' => 'required',
+    // );
 }
